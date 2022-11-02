@@ -1,5 +1,5 @@
 #include<stdio.h>
-main()
+void main()
 {
 int p[20],bt[20],pri[20], wt[20],tat[20],i, k, n, temp; 
 float wtavg,tatavg;
