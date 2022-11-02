@@ -8,10 +8,10 @@ scanf("%d",&n);
 for(i=0;i<n;i++){
 p[i] = i;
 printf("Enter the Burst Time & Priority of Process %d --- ",i); 
-scanf("%d %d",&bt[i], &pri[i]);
+scanf("%d %d", &bt[i] ,&pri[i]);
 }
-for(i=0;i<n;i++)
-for(k=i+1;k<n;k++)
+for(i=0;i<n;i++){
+for(k=i+1;k<n;k++){
 if(pri[i] > pri[k]){
 temp=p[i];
 p[i]=p[k];
@@ -22,6 +22,8 @@ bt[k]=temp;
 temp=pri[i];
 pri[i]=pri[k];
 pri[k]=temp;
+}
+}
 }
 wtavg = wt[0] = 0;
 tatavg = tat[0] = bt[0];
@@ -35,5 +37,6 @@ tatavg = tatavg + tat[i];
 printf("\nPROCESS\t\tPRIORITY\tBURST TIME\tWAITING TIME\tTURNAROUND TIME");
 for(i=0;i<n;i++)
 printf("\n%d \t\t %d \t\t %d \t\t %d \t\t %d ",p[i],pri[i],bt[i],wt[i],tat[i]);
-printf("\nAverage Waiting Time is --- %f",wtavg/n); printf("\nAverage Turnaround Time is --- %f",tatavg/n);
+printf("\nAverage Waiting Time is --- %f",wtavg/n); 
+printf("\nAverage Turnaround Time is --- %f",tatavg/n);
 }
